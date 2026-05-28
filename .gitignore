@@ -1,0 +1,12 @@
+# Python virtual environments
+.venv/
+__pycache__/
+*.pyc
+
+# Zensical build and cache directories
+.cache/
+site/
+
+# Ebook exports
+*.epub
+*.pdf
