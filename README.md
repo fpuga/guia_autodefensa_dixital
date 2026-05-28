@@ -1,6 +1,6 @@
 # Guía de Autodefensa Dixital (Web & Ebook)
 
-> **Por que facemos esta guía?** Vivimos nun mundo que, coa súa parte boa e a súa parte mala, vaise movendo cara o lado dixital a pasos axigantados, e en ocasións deixando a moita xente atrás. Este mundo dixital, ao igual ca o presencial, tamén ten unha serie de riscos dos que protexerse. Moitas de vós quizais tedes a esa persoa de confianza (filla, sobriña, amiga...) a quen consultarlle dúbidas ou pedir consello en cousas relacionadas coas tecnoloxías da información (TIC), pero non todo o mundo ten esa opción.
+> **Por que facemos esta guía?** Vivimos nun mundo que, coa súa parte boa e a súa parte mala, vaise movendo cara o lado dixital a pasos axigantados, e en ocasións deixando a moita xente atrás. Este mundo dixital, ao igual ca o presencial, tamén ten unha serie de riscos dos que protexerse. Moitas de vós quizais tedes a esa persoa de confianza (filla, sobriña, amiga...) a quen consultarlle dúbidas ou pedir consello en cousas relacionadas coas tecnoloxías da información (TIC), pero non todo o mundo ten esa opção.
 >
 > É por iso que facemos esta guía, explicando de forma clara e detallada como podes mellorar a túa seguridade dixital, teñas ou non coñecementos previos de ciberseguridade. Antes de comezar, é importante ter claro que a seguridade absoluta non existe, e sempre hai risco. O que podemos facer como persoas usuarias é poñer barreiras que nos protexan.
 >
@@ -10,7 +10,7 @@
 
 ---
 
-Este repositorio contén a versión en **Markdown** da Guía de Autodefensa Dixital, lista para ser publicada como sitio web e en formato libro electrónico (EPUB). O proxecto foi migrado dende o LaTeX orixinal empregando scripts automatizados.
+Este repositorio contén a versión en **Markdown** da Guía de Autodefensa Dixital, lista para ser publicada como sitio web e en formato libro electrónico (EPUB) e PDF. O proxecto foi migrado dende o LaTeX orixinal empregando scripts automatizados.
 
 ## Estrutura do Proxecto
 
@@ -22,7 +22,7 @@ Este repositorio contén a versión en **Markdown** da Guía de Autodefensa Dixi
 - **`zensical.toml`**: Ficheiro de configuración do xerador de sitios estáticos Zensical.
 - **`tools/`**: Pasta no directorio raíz coas ferramentas e scripts de automatización:
   - `convert.py`: Script para converter o LaTeX orixinal a Markdown GFM.
-  - `export_epub.py`: Script para xerar os libros electrónicos (EPUB) en ambas linguas.
+  - `export_book.py`: Script para xerar os libros electrónicos (EPUB) e os PDFs en ambas linguas nun único comando.
 
 ---
 
@@ -34,7 +34,7 @@ Este proxecto emprega **`uv`** para xestionar dependencias e a contorna virtual 
    ```bash
    curl -LsSf https://astral.sh/uv/install.sh | sh
    ```
-2. Asegurar que `pandoc` está instalado no sistema.
+2. Asegurar que `pandoc` e `pdflatex` (un motor LaTeX como TeX Live) están instalados no sistema.
 
 ---
 
@@ -64,8 +64,16 @@ Para iniciar o servidor de desenvolvemento e ver a web interactiva en tempo real
 
 ---
 
-## Como Exportar en Formato Libro Electrónico (EPUB)
+## Como Exportar en Formato Libro Electrónico (EPUB) e PDF
+
+Executa o script unificado da carpeta `tools`:
 
 ```bash
-python3 ../tools/export_epub.py
+python3 tools/export_book.py
 ```
+
+Os ficheiros xerados gardaranse na raíz de `miguia/`:
+- `guia_autodefensa_dixital.epub` (Galego)
+- `guia_autodefensa_dixital.pdf` (Galego)
+- `guia_autodefensa_digital.epub` (Castellano)
+- `guia_autodefensa_digital.pdf` (Castellano)
